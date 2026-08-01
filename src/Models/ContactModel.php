@@ -8,11 +8,7 @@ class ContactModel extends BaseModel {
         $stmt = $this->db->prepare("INSERT INTO contact (email, message) VALUES (?, ?)");
         $stmt->bind_param('ss', $email, $message);
 
-        if($stmt->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        return $stmt->execute()
 
     }
 
